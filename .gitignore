@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 build/
 dist/
@@ -6,3 +7,11 @@ coverage/
 *.log
 .env*
 !.env.example
+=======
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+>>>>>>> 40180f19904724d4ee1703509d7766f523c7b371
