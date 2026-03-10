@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C158;
+  --color-gold-dark: #B3922E;
+  --color-navy: #0B1C35;
+  --color-navy-light: #152C4F;
+  --color-navy-dark: #051021;
+}
+
+@layer base {
+  :root {
+    --color-bg: #FFFFFF;
+    --color-card: #F8F8F8;
+    --color-text: #111111;
+    --color-text-secondary: #555555;
+    --color-border: #E5E5E5;
+    --color-navy: #0B1C35;
+    --color-gold: #D4AF37;
+    --color-secondary: #0B1C35;
+    /* Generic mapped names for simpler maintenance */
+    --bg-color: var(--color-bg);
+    --card-bg: var(--color-card);
+    --text-primary: var(--color-text);
+    --border-color: var(--color-border);
+  }
+
+  .dark {
+    --color-bg: #0F172A;
+    --color-card: #111827;
+    --color-text: #FFFFFF;
+    --color-text-secondary: #CBD5E1;
+    --color-border: #1F2937;
+    --color-navy: #111827;
+    --color-gold: #D4AF37;
+    --color-secondary: #111827;
+    --bg-color: var(--color-bg);
+    --card-bg: var(--color-card);
+    --text-primary: var(--color-text);
+    --border-color: var(--color-border);
+  }
+
+  body {
+    @apply font-sans;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Form Elements Base Styling */
+  input, textarea, select {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--color-text-secondary) !important;
+    opacity: 1 !important;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--color-gold) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px var(--color-gold) !important;
+  }
+}
+
