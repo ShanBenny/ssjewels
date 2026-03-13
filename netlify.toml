@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Tell Netlify not to treat warnings as errors
+  CI = "false"
+  # Specify Node version to match local environment if needed, commonly 18 or 20
+  NODE_VERSION = "20"
+
+[[redirects]]
+  # Redirect all paths to index.html for React Router to handle client-side routing
+  from = "/*"
+  to = "/index.html"
+  status = 200
